@@ -67,9 +67,9 @@ def segmentos(): # monstra os segmentos
         i=1
         for x in seg['Segmentos']:
             if i==1:
-                y="## "+x+'\n'                   
+                y="## "+x+'\n'                  
             else:    
-                y=y+"## "+ x+'\n'            
+                y=y+"## "+ x+'\n'      
             i+=1           
         map="'''\n"+"---\n"+"markmap:\n"+"colorFreezeLevel: 2\n"+"---\n"+"# Segmentos\n"+y+"'''"        
         markmap(map, height=800)
@@ -126,16 +126,21 @@ def contribuinte(): # monstra contribuinte por segmentos
                 y=y+"## "+ x+'\n'
             t=1
             razao=''
-            dfFiltrado= df.loc[df['Segmentos'] == x] # pega so as razoes sociais do segmento analisado            
-            for k in dfFiltrado['Razao']:                
+            dfFiltrado= df.loc[df['Segmentos'] == x] # pega so as razoes sociais do segmento analisado 
+            for index, row in dfFiltrado.iterrows():
+                print(row['Razao'], row['IE']) 
+
+            #for k in dfFiltrado['Razao']:                
                 if (t==1): 
-                    razao="### "+k+'\n' 
+                    #razao='\n'+"### "+k+'\n' + " - IE: 2845245"  
+                    razao="\n### "+str(row['Razao'])+ '\n'+" - IE: "+ str(row['IE']) + '\n' + " - Resp: "+ str(row['Auditor_Responsavel'])
                 else:
-                    razao=razao+"### "+ k+'\n'
+                    #razao='\n'+razao+"### "+ k+'\n' + " - IE: 2845245"
+                    razao=razao+"\n### "+ str(row['Razao'])+ '\n'+" - IE: "+str(row['IE'])  + '\n' + " - Resp: "+ str(row['Auditor_Responsavel'])
                 t+=1
             y=y+razao
             i+=1           
-        map="'''\n"+"---\n"+"markmap:\n"+"colorFreezeLevel: 2\n"+"---\n"+"# Segmentos\n"+y+"'''" 
+        map="'''\n"+"---\n"+"markmap:\n"+"colorFreezeLevel: 2\n"+"---\n"+"# Segmentos\n"+y
         markmap(map, height=800)
 
 
