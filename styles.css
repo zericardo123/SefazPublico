@@ -1,0 +1,29 @@
+.app>option_menu{
+    background-color: red;
+    color: rgb(238, 255, 239)
+}
+span.st-emotion-cache-9ycgxx.e1b2p2ww12
+{
+    background-color: white;
+}
+data-stale.data-testid.element-container
+{
+    background-color: yellow;
+}
+.st-emotion-cache-16idsys.e1nzilvr5
+{
+    font-size: 1px;
+}
+#tabs-bui4-tab-1
+{
+    font-size: 1000px;
+}
+
+[data-testid="stFileUploadDropzone"] div div::before {color:red; content:"Arraste o arquivo e solte"}
+[data-testid="stFileUploadDropzone"] div div span{display:none;}
+[data-testid="stFileUploadDropzone"] div div::after {color:red; font-size: .8em; content:"Tamanho maximo 200MB por arquivo"}
+[data-testid="stFileUploadDropzone"] div div small{display:none;}
+
+
+
+
