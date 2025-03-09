@@ -15,7 +15,7 @@ selected=ConfigFormatacao.sidebarconfig() # configura side bar e retorna o selec
 
 if selected=="Home":      
     st.title('Coordenadoria de Monitoramento e Fiscalização')
-    st.image('auditoria.jpg')
+    st.image('./auditoria.jpg')
     
 if selected=="Dados":      
     Dados.main()
